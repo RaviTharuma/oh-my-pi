@@ -6,6 +6,10 @@
 
 - Added `tui.titleSpinner` (`braille` | `dots` | `line`, default `braille`) to pick the terminal-title working-state spinner glyphs alongside the existing `tui.titleState` on/off toggle.
 
+### Fixed
+
+- `--max-time` now reserves fallback-hop budget only when a configured `retry.fallbackChains` candidate exists, and caps the final retry wait so a hung primary can still fail over before the deadline.
+
 ## [18.2.1] - 2026-09-15
 
 ### Breaking Changes
