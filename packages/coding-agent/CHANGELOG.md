@@ -32,6 +32,7 @@
 - Custom `Other` answers are now applied before the Ask dialog becomes interactive again, so the next Enter is no longer discarded ([#11558](https://github.com/can1357/oh-my-pi/pull/11558) by [@schickling-assistant](https://github.com/schickling-assistant)).
 - Explicit per-model price overrides retain their configured flat rates instead of inheriting time-based pricing.
 - Fixed wrong-typed `compat.stripImageInput` in `models.yml` being silently accepted, so the documented vision opt-out is now validated like its neighbours ([#11697](https://github.com/can1357/oh-my-pi/issues/11697)).
+- Starting omp no longer dies on a single ambiguous discovered model identity in `models.yml` (OmniRoute `openai-compatible-chat-<uuid>/cohere/north-mini-code:free` tying `cohere` and `openai`).
 
 ## [18.1.16] - 2026-09-09
 
@@ -55,7 +56,6 @@
 - Extensions loaded by the npm CLI now apply settings overrides to the active session, so generated agents and model choices remain isolated between sessions ([#11047](https://github.com/can1357/oh-my-pi/pull/11047) by [@mgpai22](https://github.com/mgpai22)).
 - Live task dispatch now reloads added, changed, removed, and deleted project task and retry settings before resolving subagents ([#11191](https://github.com/can1357/oh-my-pi/issues/11191)).
 - Reset `/loop` iterations combined with `--while` / `--until` no longer keep submitting without resetting when vibe mode is enabled while the condition command is still running; the loop now disables itself instead ([#10858](https://github.com/can1357/oh-my-pi/pull/10858)).
-- Starting omp no longer dies on a single ambiguous discovered model identity in `models.yml` (OmniRoute `openai-compatible-chat-<uuid>/cohere/north-mini-code:free` tying `cohere` and `openai`).
 
 ## [18.1.15] - 2026-09-08
 
