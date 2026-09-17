@@ -2,15 +2,15 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- `buildModel` no longer aborts the process when a discovered or custom model id ties two identity classes (for example OmniRoute `openai-compatible-chat-<uuid>/cohere/...` vs the `openai` namespace). Classification is lenient for runtime specs; curated generation explicitly uses strict identity validation, and policy rebaking remains strict by default.
+
 ## [18.2.4] - 2026-09-17
 
 ### Added
 
 - Added `typesafe` authentication for TypeSafe System One judgments via the `TYPESAFE_API_KEY` configuration and API-key validation against the TypeSafe models endpoint.
-- `typesafe` auth policy (`TYPESAFE_API_KEY`, API-key login validated against `/v1/models`) for TypeSafe System One judgments.
-### Fixed
-
-- `buildModel` no longer aborts the process when a discovered or custom model id ties two identity classes (for example OmniRoute `openai-compatible-chat-<uuid>/cohere/...` vs the `openai` namespace). Classification is lenient for runtime specs; curated generation explicitly uses strict identity validation, and policy rebaking remains strict by default.
 
 ## [18.2.3] - 2026-09-17
 

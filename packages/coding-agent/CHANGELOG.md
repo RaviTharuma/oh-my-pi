@@ -5,6 +5,8 @@
 ### Fixed
 
 - Fixed startup aborting when the plugins directory exists but cannot be read — a sandboxed run, a restrictive mode, or a manifest symlinked into a denied path; the unreadable root is now skipped with a warning.
+- Starting omp no longer dies on a single ambiguous discovered model identity in `models.yml` (OmniRoute `openai-compatible-chat-<uuid>/cohere/north-mini-code:free` tying `cohere` and `openai`).
+
 ## [18.2.4] - 2026-09-17
 
 ### Added
@@ -16,10 +18,6 @@
 ### Changed
 
 - Unified thinking-level detection, unexpected-stop detection, and AI-assisted staging around a shared judgment system with automatic fallback across configured models when TypeSafe is unavailable or cannot complete a request. AI-assisted staging now evaluates files as a single batched judgment while preserving one yes/no decision per file.
-- The difficulty, unexpected-stop, and AI-staging classifiers share one judgment interface; without TypeSafe, or when a TypeSafe request fails, they fall back through the `tiny`, `smol`, `default`, and active-session models. Text backends receive XML-field state with nested YAML; chat models get anti-execution guards and forced structured correction, while local bucket classifiers get XML-shaped examples. AI staging now asks one yes/no question per file in a single batched request instead of echoing paths.
-### Fixed
-
-- Starting omp no longer dies on a single ambiguous discovered model identity in `models.yml` (OmniRoute `openai-compatible-chat-<uuid>/cohere/north-mini-code:free` tying `cohere` and `openai`).
 
 ## [18.2.3] - 2026-09-17
 
