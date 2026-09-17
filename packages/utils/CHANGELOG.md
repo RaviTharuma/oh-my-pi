@@ -2,9 +2,20 @@
 
 ## [Unreleased]
 
+## [18.2.3] - 2026-09-17
+
+### Fixed
+
+- Optimized model configuration command execution by deduplicating requests and adding failure backoff
+- Prevented unnecessary credential command execution when runtime API keys are configured
+- Retained `readLines()` results no longer change when later chunks reuse the internal buffer.
+- Long sleeps honor elapsed time and re-arm after premature timer wakes without overflowing native timer delays.
+
+## [18.2.2] - 2026-09-16
+
 ### Added
 
-- Added `openSqliteDatabase` and `openSqliteDatabaseSync` with path-attributed errors and opt-in corruption recovery that preserves private database and sidecar backups; async opens also retry busy errors.
+- Added asynchronous and synchronous SQLite database opening APIs with path-attributed errors, optional corruption recovery that preserves private database and sidecar backups, and automatic retries for transient busy errors during asynchronous opens.
 
 ## [18.2.1] - 2026-09-15
 
